@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f2f3f4;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  top: 0;
+  background-color: #45545e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 1;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.moon {
+  height: 35px;
+  width: 40px;
+}
+
+.myAcc {
+  width: 100px;
+  height: 30px;
+  background-color: #45545e;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 20px;
+}
+
+.releases {
+  margin: 105px 0 0 50px;
+  color: gray;
+  font-size: larger;
+}
+
+#mainContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
