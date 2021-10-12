@@ -1,0 +1,35 @@
+<div
+  class="info"
+  [ngStyle]="{
+  backgroundImage:  'url('+ linkForImage + info.poster_path +')'
+  }"
+></div>
+<div
+  class="infoBlur"
+  [ngStyle]="{
+  flexDirection: 'column'
+  }"
+>
+  <div class="innerInfo">
+    <div
+      class="infoPoster"
+      [ngStyle]="{'background-image':  'url('+ linkForImage + info.poster_path +')'}"
+    ></div>
+    <div class="innerInfoText">
+      <p class="innerTitle">{{info.title}}</p>
+      <ul>
+        <li class="vote">Score: {{info.vote_average}}</li>
+        <li class="rating">Rating: </li>
+        <li class="releaseDate">Release Date: {{info.release_date | date}}</li>
+      </ul>
+      <p class="overview">{{info.overview}}</p>
+    </div>
+  </div>
+  <pre
+    [routerLink]="['/']"
+    class="buttonBack"
+  >ᐊ          Back to list</pre>
+  <pre
+    class="buttonNext"
+  >Next movie          ᐅ</pre>
+</div>
