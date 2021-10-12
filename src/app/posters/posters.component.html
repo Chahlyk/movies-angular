@@ -1,14 +1,4 @@
-<div
-  class="poster"
-  *ngFor="let poster of posters"
-  [ngStyle]="{'background-image':  'url('+ linkForImage + poster.poster_path +')'}"
-  (mouseover)="tool = true"
-  (mouseleave)="tool = false"
->
-  <div class="tooltip" [ngStyle]="{display: tool ? 'block' : 'none'}">
-    <p>{{poster.title}}</p>
-  </div>
-</div>
+<app-poster *ngFor="let poster of posters" [poster]="poster"></app-poster>
 
 
 

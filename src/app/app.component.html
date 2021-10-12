@@ -1,13 +1,13 @@
 <div class="header">
   <div class="title">
     <img src="https://raw.githubusercontent.com/Chahlyk/smth/movies/movies/pictures/moon-clip-art-38.png" class="moon" alt="moon"/>
-    <p>Movies</p>
+    <a [routerLink]="['/']"><p>Movies</p></a>
   </div>
-  <button class="myAcc">My Account ˅</button>
+  <a [routerLink]="['/my-account']"><button class="myAcc">My Account ˅</button></a>
 </div>
 <p class="releases">Latest Releases</p>
 <div id="mainContent">
-  <app-posters></app-posters>
+  <router-outlet></router-outlet>
 </div>
 
 
