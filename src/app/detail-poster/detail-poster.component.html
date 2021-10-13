@@ -19,7 +19,7 @@
       <p class="innerTitle">{{info.title}}</p>
       <ul>
         <li class="vote">Score: {{info.vote_average}}</li>
-        <li class="rating">Rating: </li>
+        <li class="rating">Rating: {{info.adult ? 'R' : 'PG'}}</li>
         <li class="releaseDate">Release Date: {{info.release_date | date}}</li>
       </ul>
       <p class="overview">{{info.overview}}</p>
@@ -30,6 +30,7 @@
     class="buttonBack"
   >ᐊ          Back to list</pre>
   <pre
+    [routerLink]="['/info/:id', info.id]"
     class="buttonNext"
   >Next movie          ᐅ</pre>
 </div>

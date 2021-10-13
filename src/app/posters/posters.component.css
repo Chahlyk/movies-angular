@@ -1,3 +1,21 @@
+.releases {
+  margin: 120px 0 0 50px;
+  color: gray;
+  font-size: larger;
+}
 
+#mainContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+app-posters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 

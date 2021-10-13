@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Poster, PosterService } from "./poster.service";
-import { map } from "rxjs/operators";
+import { PosterService } from "./poster.service";
+import { IPoster } from "../shared/interfaces";
 
 @Component({
   selector: 'app-posters',
@@ -9,20 +9,18 @@ import { map } from "rxjs/operators";
 })
 export class PostersComponent implements OnInit {
 
-  posters: Poster[] = []
+  posters: IPoster[] = []
 
   constructor(private posterService: PosterService) {}
 
   ngOnInit(): void {
-    this.fetchAPI()
+    this.getData()
   }
 
-  fetchAPI() {
-    this.posterService.fetchAPI()
-      .pipe(map((data: any) => data.results))
-      .subscribe(posters => {
-        this.posters = posters
-        console.log('Response', posters)
+  getData() {
+    this.posterService.getData()
+      .subscribe((posters) => {
+        this.posters = posters.results
       })
   }
 }

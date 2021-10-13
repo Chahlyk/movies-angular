@@ -37,7 +37,7 @@
 
 .innerInfoText {
   font-size: 16px;
-  width: 600px;
+  width: 650px;
 }
 
 .overview {
@@ -45,6 +45,7 @@
   border-bottom: 1px solid white;
   padding: 15px 0;
   margin: 40px 0 0 0;
+  font-size: larger;
 }
 
 .vote {
@@ -73,6 +74,7 @@
   border: 1px solid white;
   border-radius: 10px;
   color: white;
+  cursor: pointer;
 }
 
 .buttonBack {

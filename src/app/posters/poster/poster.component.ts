@@ -5,8 +5,10 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './poster.component.html',
   styleUrls: ['./poster.component.css']
 })
+
 export class PosterComponent implements OnInit {
   @Input() public poster!: any;
+
 
   tooltip: boolean = false
 

@@ -6,25 +6,23 @@ import { PostersComponent } from './posters/posters.component';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { PosterComponent } from './posters/poster/poster.component';
-import { MyAccountComponent } from './my-account/my-account.component';
 import { AppRoutingModule } from "./app-routing.module";
-import { InfosComponent } from './infos/infos.component';
-import { InfoComponent } from './infos/info/info.component';
+import { DetailPosterComponent } from './detail-poster/detail-poster.component';
+import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     PostersComponent,
     PosterComponent,
-    MyAccountComponent,
-    InfosComponent,
-    InfoComponent
+    DetailPosterComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
