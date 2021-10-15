@@ -16,9 +16,9 @@ export interface IPoster {
 }
 
 export interface IData {
-  dates: {};
-  page: number;
-  results: IPoster[];
-  total_pages: number;
+  dates: {},
+  page: number,
+  results: IPoster[],
+  total_pages: number,
   total_results: number
 }

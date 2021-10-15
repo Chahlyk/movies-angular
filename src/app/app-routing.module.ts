@@ -1,11 +1,11 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { PostersComponent } from "./posters/posters.component";
-import { AppComponent } from "./app.component";
 
 const routes: Routes =[
-  {path: '', component: AppComponent},
-  {path: 'posters', component: PostersComponent}
+  { path: '', redirectTo: '/posters', pathMatch: 'full' },
+  { path: 'posters', component: PostersComponent },
+  // {path: '**', component: NotComponent} // todo homework
 ]
 
 @NgModule({

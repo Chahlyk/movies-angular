@@ -1,4 +1,4 @@
-.info {
+.detailPoster {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,7 +10,7 @@
   filter: blur(4px);
 }
 
-.infoBlur {
+.detailBlur {
   position: fixed;
   top: 0;
   left: 0;
@@ -19,7 +19,7 @@
   display: flex;
 }
 
-.innerInfo {
+.innerDetail {
   width: 1000px;
   color: white;
   margin: auto;
@@ -28,14 +28,14 @@
   justify-content: space-around;
 }
 
-.infoPoster {
+.detailPoster {
   width: 300px;
   height: 350px;
   background: center;
   background-size: cover;
 }
 
-.innerInfoText {
+.innerDetailText {
   font-size: 16px;
   width: 650px;
 }

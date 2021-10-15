@@ -1,36 +1,36 @@
-<div
-  class="info"
-  [ngStyle]="{
-  backgroundImage:  'url('+ linkForImage + info.poster_path +')'
-  }"
-></div>
-<div
-  class="infoBlur"
-  [ngStyle]="{
-  flexDirection: 'column'
-  }"
->
-  <div class="innerInfo">
-    <div
-      class="infoPoster"
-      [ngStyle]="{'background-image':  'url('+ linkForImage + info.poster_path +')'}"
-    ></div>
-    <div class="innerInfoText">
-      <p class="innerTitle">{{info.title}}</p>
-      <ul>
-        <li class="vote">Score: {{info.vote_average}}</li>
-        <li class="rating">Rating: {{info.adult ? 'R' : 'PG'}}</li>
-        <li class="releaseDate">Release Date: {{info.release_date | date}}</li>
-      </ul>
-      <p class="overview">{{info.overview}}</p>
-    </div>
-  </div>
-  <pre
-    [routerLink]="['/']"
-    class="buttonBack"
-  >ᐊ          Back to list</pre>
-  <pre
-    [routerLink]="['/info/:id', info.id]"
-    class="buttonNext"
-  >Next movie          ᐅ</pre>
-</div>
+<!--<div-->
+<!--  class="detailPoster"-->
+<!--  [ngStyle]="{-->
+<!--  backgroundImage:  'url('+ linkForImage + info.poster_path +')'-->
+<!--  }"-->
+<!--&gt;</div>-->
+<!--<div-->
+<!--  class="detailBlur"-->
+<!--  [ngStyle]="{-->
+<!--  flexDirection: 'column'-->
+<!--  }"-->
+<!--&gt;-->
+<!--  <div class="innerDetail">-->
+<!--    <div-->
+<!--      class="detailPoster"-->
+<!--      [ngStyle]="{'background-image':  'url('+ linkForImage + info.poster_path +')'}"-->
+<!--    ></div>-->
+<!--    <div class="innerDetailText">-->
+<!--      <p class="innerTitle">{{info.title}}</p>-->
+<!--      <ul>-->
+<!--        <li class="vote">Score: {{info.vote_average}}</li>-->
+<!--        <li class="rating">Rating: {{info.adult ? 'R' : 'PG'}}</li>-->
+<!--        <li class="releaseDate">Release Date: {{info.release_date | date}}</li>-->
+<!--      </ul>-->
+<!--      <p class="overview">{{info.overview}}</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <pre-->
+<!--    [routerLink]="['/']"-->
+<!--    class="buttonBack"-->
+<!--  >ᐊ          Back to list</pre>-->
+<!--  <pre-->
+<!--    [routerLink]="['/info/:id', info.id]"-->
+<!--    class="buttonNext"-->
+<!--  >Next movie          ᐅ</pre>-->
+<!--</div>-->

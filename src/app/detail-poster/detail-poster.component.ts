@@ -18,10 +18,10 @@ export class DetailPosterComponent implements OnInit {
   }
 
   getData() {
-    this.posterService.getData()
-      .subscribe(infos => {
-        this.infos = infos.results
-      })
+    // this.posterService.getData()
+    //   .subscribe(infos => {
+    //     this.infos = infos.results
+    //   })
   }
 
 }
