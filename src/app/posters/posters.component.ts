@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PosterService } from "./poster.service";
-import { IPoster } from "../shared/interfaces";
+import { IData, IPoster } from "../shared/interfaces";
+import { PosterService } from "../poster.service";
 
 @Component({
   selector: 'app-posters',
@@ -19,7 +19,7 @@ export class PostersComponent implements OnInit {
 
   getData() {
     this.posterService.getData()
-      .subscribe((posters) => {
+      .subscribe((posters: IData) => {
         this.posters = posters.results
       })
   }

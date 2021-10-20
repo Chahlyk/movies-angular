@@ -9,6 +9,7 @@ import { PosterComponent } from './posters/poster/poster.component';
 import { AppRoutingModule } from "./app-routing.module";
 import { DetailPosterComponent } from './detail-poster/detail-poster.component';
 import { SharedModule } from "./shared/shared.module";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SharedModule } from "./shared/shared.module";
     PostersComponent,
     PosterComponent,
     DetailPosterComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

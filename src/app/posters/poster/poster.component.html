@@ -1,13 +1,14 @@
-<div
-  class="poster"
-  [ngStyle]="{'background-image':  'url('+ linkForImage + poster.poster_path +')'}"
-  (mouseover)="tooltip = true"
-  (mouseleave)="tooltip = false"
-  [routerLink]="['/info', poster.id]"
->
-
-  <div class="tooltip" [ngStyle]="{display: tooltip ? 'flex' : 'none'}">
-    <p>{{poster.title}}</p>
+<a routerLink="/detail/{{poster.id}}">
+  <div
+    class="poster"
+    [ngStyle]="{'background-image':  'url('+ linkForImage + poster.poster_path +')'}"
+    (mouseover)="tooltip = true"
+    (mouseleave)="tooltip = false"
+  >
+    <div class="tooltip" [ngStyle]="{display: tooltip ? 'flex' : 'none'}">
+      <p>{{poster.title}}</p>
+    </div>
   </div>
-</div>
+</a>
+
 

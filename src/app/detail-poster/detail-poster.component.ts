@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PosterService } from "../posters/poster.service";
+import { PosterService } from "../poster.service";
 import { IPoster } from "../shared/interfaces";
+import { ActivatedRoute } from "@angular/router";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-infos',
@@ -9,19 +11,27 @@ import { IPoster } from "../shared/interfaces";
 })
 export class DetailPosterComponent implements OnInit {
 
-  infos: IPoster[] = []
+  poster: IPoster[] | undefined;
+  linkForImage: string = 'https://image.tmdb.org/t/p/w342';
 
-  constructor(private posterService: PosterService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private posterService: PosterService,
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
-    this.getData()
+    this.getPoster()
   }
 
-  getData() {
-    // this.posterService.getData()
-    //   .subscribe(infos => {
-    //     this.infos = infos.results
-    //   })
+  getPoster(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.posterService.getPoster(id)
+      .subscribe(poster => this.poster = poster);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
