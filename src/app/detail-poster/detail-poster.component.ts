@@ -10,18 +10,17 @@ import { Location } from '@angular/common';
   styleUrls: ['./detail-poster.component.css']
 })
 export class DetailPosterComponent implements OnInit {
-
-  poster: IPoster[] | undefined;
+  poster: IPoster[] = []
   linkForImage: string = 'https://image.tmdb.org/t/p/w342';
 
   constructor(
     private route: ActivatedRoute,
     private posterService: PosterService,
-    private location: Location
+    private location: Location,
   ) { }
 
   ngOnInit(): void {
-    this.getPoster()
+    this.getPoster();
   }
 
   getPoster(): void {
