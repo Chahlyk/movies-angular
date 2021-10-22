@@ -1,4 +1,4 @@
-.detailPoster {
+.detailInnerPoster {
   position: fixed;
   top: 0;
   left: 0;
@@ -30,9 +30,10 @@
 
 .detailPoster {
   width: 300px;
-  height: 350px;
+  height: 450px;
   background: center;
   background-size: cover;
+  border-radius: 10px;
 }
 
 .innerDetailText {
@@ -67,14 +68,14 @@
   padding-bottom: 15px;
 }
 
-.favourite {
-  width: 220px;
-  text-align: center;
-  padding: 10px;
+.addToFavourite {
+  float: right;
   border: 1px solid white;
-  border-radius: 10px;
-  color: white;
   cursor: pointer;
+  border-radius: 10px;
+  font-size: 24px;
+  padding: 10px;
+  margin-top: -40px;
 }
 
 .buttonBack {
@@ -82,6 +83,7 @@
   cursor: pointer;
   margin: 150px 50px;
   position: absolute;
+  font-size: 24px;
 }
 
 .buttonNext {
@@ -90,6 +92,7 @@
   top: 150px;
   right: 50px;
   position: absolute;
+  font-size: 24px;
 }
 
 ul {

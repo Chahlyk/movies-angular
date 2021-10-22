@@ -17,7 +17,8 @@ export class PosterService {
     })
   }
 
-  getPoster(id: number): Observable<IPoster[]> {
-    return this.http.get<IPoster[]>(`https://api.themoviedb.org/3/movie/now_playing${id}?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c&language=en-US`)
+  getPoster(id: number): Observable<IPoster> {
+    return this.http.get<IPoster>(`https://api.themoviedb.org/3/movie/${id}?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c&language=en-US`)
   }
+
 }

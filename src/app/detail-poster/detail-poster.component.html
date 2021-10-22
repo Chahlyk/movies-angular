@@ -1,35 +1,45 @@
-<div
-  class="detailPoster"
-  [ngStyle]="{
-backgroundImage:  'url('+ linkForImage + poster.poster_path +')'
+<ng-container *ngIf="loading">
+  <div
+    class="detailInnerPoster"
+    [ngStyle]="{
+    backgroundImage:  'url('+ linkForImage + poster.poster_path +')'
 }"
-></div>
-<div
-  class="detailBlur"
-  [ngStyle]="{
+  ></div>
+  <div
+    class="detailBlur"
+    [ngStyle]="{
 flexDirection: 'column'
 }"
->
-  <div class="innerDetail">
-    <div
-      class="detailPoster"
-      [ngStyle]="{'background-image':  'url('+ linkForImage + poster.poster_path +')'}"
-    ></div>
-    <div class="innerDetailText">
-      <p class="innerTitle">{{poster.title}}</p>
-      <ul>
-        <li class="vote">Score: {{poster.vote_average}}</li>
-        <li class="rating">Rating: {{poster.adult ? 'R' : 'PG'}}</li>
-        <li class="releaseDate">Release Date: {{poster.release_date | date}}</li>
-      </ul>
-      <p class="overview">{{poster.overview}}</p>
+  >
+    <div class="innerDetail">
+      <div
+        class="detailPoster"
+        [ngStyle]="{'background-image':  'url('+ linkForImage + poster.poster_path +')'}"
+      ></div>
+      <div class="innerDetailText">
+        <div
+          (click)="addToFavourite(poster)"
+          [ngStyle]="{
+            display: required ? 'none' : 'block'
+          }"
+          class="addToFavourite"
+        >Add to favourite</div>
+        <p class="innerTitle">{{poster.title}}</p>
+        <ul>
+          <li class="vote">Score: {{poster.vote_average}}</li>
+          <li class="rating">Rating: {{poster.adult ? 'R' : 'PG'}}</li>
+          <li class="releaseDate">Release Date: {{poster.release_date | date}}</li>
+        </ul>
+        <p class="overview">{{poster.overview}}</p>
+      </div>
+
     </div>
+    <pre
+      (click)="goBack()"
+      class="buttonBack"
+    >ᐊ          Back to list</pre>
+    <pre class="buttonNext">Next movie          ᐅ</pre>
   </div>
-  <pre
-    (click)="goBack()"
-    class="buttonBack"
-  >ᐊ          Back to list</pre>
-  <pre
-    class="buttonNext"
-  >Next movie          ᐅ</pre>
-</div>
+</ng-container>
+
+
