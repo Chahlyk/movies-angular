@@ -11,6 +11,7 @@ import { CartService } from "../cart.service";
   styleUrls: ['./detail-poster.component.css']
 })
 export class DetailPosterComponent implements OnInit {
+  public posters: IPoster[] = []
   public poster!: IPoster
   public linkForImage: string = 'https://image.tmdb.org/t/p/w342';
   public loading: boolean = false;
@@ -38,10 +39,6 @@ export class DetailPosterComponent implements OnInit {
 
   public goBack(): void {
     this.location.back();
-  }
-
-  public next() {
-
   }
 
   public addToFavourite(film: IPoster) {

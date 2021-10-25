@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from "../../../cart.service";
+import { IPoster } from "../../interfaces";
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,10 @@ export class HeaderComponent implements OnInit {
   constructor( private cartService: CartService ) { }
 
   ngOnInit(): void {
+  }
+
+  public removeFilm(film: IPoster) {
+    this.cartService.removeFilm(film)
   }
 
 }

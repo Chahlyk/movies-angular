@@ -1,25 +1,26 @@
 <div class="header">
   <div class="title">
     <img src="https://raw.githubusercontent.com/Chahlyk/smth/movies/movies/pictures/moon-clip-art-38.png" class="moon" alt="moon"/>
-    <a [routerLink]="['/']"><p>Movies</p></a>
+    <a [routerLink]="['/']" (click)="acc = false"><p>Movies</p></a>
   </div>
   <div class="myAcc" (click)="acc = !acc">
     <p>My Account ˅</p>
   </div>
 </div>
-<div
-  class="filmList"
-  [ngStyle]="{display: acc ? 'block' : 'none'}"
->
-  <div *ngFor="let film of films">
-    <div class="filmPoster"
-         [ngStyle]="{'background-image':  'url('+ linkForImage + film.poster_path +')'}"
-    ></div>
-    <div>
-      <div class="unfavourite">Unfavourite</div>
-      <p class="filmTitle">{{film.title}}</p>
-      <p class="filmOverview">{{film.overview}}</p>
+  <div
+    class="filmList"
+    [ngStyle]="{display: acc ? 'block' : 'none'}"
+  >
+    <p class="myFavourite">My favourite</p>
+    <div *ngFor="let film of films" class="film">
+      <div class="filmPoster"
+           [ngStyle]="{'background-image':  'url('+ linkForImage + film.poster_path +')'}"
+      ></div>
+      <div>
+        <div class="unfavourite" (click)="removeFilm(film)">Unfavourite</div>
+        <p class="filmTitle">{{film.title}}</p>
+        <p class="filmOverview">{{film.overview}}</p>
+      </div>
     </div>
   </div>
-</div>
 <router-outlet></router-outlet>

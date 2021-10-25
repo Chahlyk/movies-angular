@@ -10,11 +10,20 @@ export class CartService {
   constructor() { }
 
   addToFavourite(film: IPoster) {
-    this.movies.push(film);
+    if (this.movies.indexOf(film) === -1) {
+      this.movies.push(film);
+    } else return
   }
 
   getMovie() {
-    return this.movies;
+    return this.movies
+  }
+
+  removeFilm(film: IPoster) {
+    const index = this.movies.indexOf(film);
+    if (index > -1) {
+      this.movies.splice(index, 1);
+    }
   }
 
 }
