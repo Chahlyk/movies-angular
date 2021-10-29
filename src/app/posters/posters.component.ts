@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IData, IPoster } from "../shared/interfaces";
-import { PosterService } from "../poster.service";
+import { IData, IPoster } from '../shared/interfaces';
+import { PosterService } from '../shared/services/poster.service';
 
 @Component({
   selector: 'app-posters',
@@ -8,19 +8,18 @@ import { PosterService } from "../poster.service";
   styleUrls: ['./posters.component.css']
 })
 export class PostersComponent implements OnInit {
+  public posters: IPoster[] = [];
 
-  posters: IPoster[] = []
+  public constructor(private posterService: PosterService) {}
 
-  constructor(private posterService: PosterService) {}
-
-  ngOnInit(): void {
-    this.getData()
+  public ngOnInit(): void {
+    this.getData();
   }
 
-  getData() {
+  private getData(): void {
     this.posterService.getData()
       .subscribe((posters: IData) => {
-        this.posters = posters.results
+        this.posters = posters.results;
       })
   }
 }

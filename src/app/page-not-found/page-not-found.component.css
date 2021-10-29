@@ -1,0 +1,21 @@
+.content {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 36px;
+}
+
+.back {
+  font-size: 36px;
+  color: white;
+  background-color: #45545e;
+  border-radius: 10px;
+  margin: 30px;
+}
+
+.picture {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+}

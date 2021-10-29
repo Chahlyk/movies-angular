@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-poster',
@@ -6,17 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./poster.component.css']
 })
 
-export class PosterComponent implements OnInit {
+export class PosterComponent {
   @Input() public poster!: any;
 
-
-  tooltip: boolean = false
-
-  linkForImage: string = 'https://image.tmdb.org/t/p/w342'
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  public tooltip: boolean = false;
+  public linkForImage: string = 'https://image.tmdb.org/t/p/w342';
 }

@@ -1,8 +1,16 @@
+export interface IData {
+  dates: IDates,
+  page: number,
+  results: IPoster[],
+  total_pages: number,
+  total_results: number
+}
+
 export interface IPoster {
   adult: boolean,
   backdrop_path: string,
   id: number,
-  genre_ids?: [],
+  genre_ids?: Array<number>,
   original_language?: string,
   original_title: string,
   overview: string,
@@ -15,10 +23,7 @@ export interface IPoster {
   vote_count?: number
 }
 
-export interface IData {
-  dates: {},
-  page: number,
-  results: IPoster[],
-  total_pages: number,
-  total_results: number
+export interface IDates {
+  maximum: string,
+  minimum: string
 }

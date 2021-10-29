@@ -1,47 +1,21 @@
-<ng-container *ngIf="loading">
-  <div
-    class="detailInnerPoster"
-    [ngStyle]="{
-    backgroundImage:  'url('+ linkForImage + poster.poster_path +')'
-}"
-  ></div>
-  <div
-    class="detailBlur"
-    [ngStyle]="{
-flexDirection: 'column'
-}"
-  >
-    <div class="innerDetail">
-      <div
-        class="detailPoster"
-        [ngStyle]="{'background-image':  'url('+ linkForImage + poster.poster_path +')'}"
-      ></div>
-      <div class="innerDetailText">
-        <div
-          (click)="addToFavourite(poster)"
-          [ngStyle]="{
-            display: required ? 'none' : 'block'
-          }"
-          class="addToFavourite"
-        >Add to favourite</div>
-        <p class="innerTitle">{{poster.title}}</p>
+<ng-container *ngIf='loading'>
+  <div class='detailInnerPoster' [ngStyle]="{ backgroundImage:  'url('+ linkForImage + poster.poster_path +')'}"></div>
+  <div class='detailBlur'>
+    <div class='innerDetail'>
+      <div class='detailPoster' [ngStyle]="{'background-image':  'url('+ linkForImage + poster.poster_path +')'}"></div>
+      <div class='innerDetailText'>
+        <button class='addToFavourite' (click)='required = !required'>{{title}}</button>
+        <p class='innerTitle'>{{poster.title}}</p>
         <ul>
-          <li class="vote">Score: {{poster.vote_average}}</li>
-          <li class="rating">Rating: {{poster.adult ? 'R' : 'PG'}}</li>
-          <li class="releaseDate">Release Date: {{poster.release_date | date}}</li>
+          <li class='vote'>Score: {{poster.vote_average}}</li>
+          <li class='rating'>Rating: {{poster.adult ? 'R' : 'PG'}}</li>
+          <li class='releaseDate'>Release Date: {{poster.release_date | date}}</li>
         </ul>
-        <p class="overview">{{poster.overview}}</p>
+        <p class='overview'>{{poster.overview}}</p>
       </div>
-
     </div>
-    <pre
-      (click)="goBack()"
-      class="buttonBack"
-    >ᐊ          Back to list</pre>
-    <pre
-    (click)="nextMovie()"
-      class="buttonNext"
-    >Next movie          ᐅ</pre>
+    <pre class='buttonBack' (click)='goBack()'>ᐊ          Back to list</pre>
+    <pre class='buttonNext' (click)='nextMovie()'>Next movie          ᐅ</pre>
   </div>
 </ng-container>
 
