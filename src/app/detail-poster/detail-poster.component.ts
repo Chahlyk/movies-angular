@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { PosterService } from "../shared/services/poster.service";
 import { IPoster } from '../shared/interfaces';
 import { ActivatedRoute, Router } from "@angular/router";
@@ -10,12 +10,12 @@ import { CartService } from "../shared/services/cart.service";
   templateUrl: './detail-poster.component.html',
   styleUrls: ['./detail-poster.component.css']
 })
-export class DetailPosterComponent implements OnInit {
+export class DetailPosterComponent implements OnInit{
   public poster!: IPoster;
   public linkForImage: string = 'https://image.tmdb.org/t/p/w342';
-  public title: string = '';
+  public title: string = 'Add to favourite';
   public loading: boolean = false;
-  public required: boolean = false;
+  public required: boolean = true;
   private posters: IPoster[] = [];
   private nextPoster!: IPoster;
   private idx!: number;
@@ -30,13 +30,17 @@ export class DetailPosterComponent implements OnInit {
 
   public ngOnInit(): void {
     this.getPoster();
-    this.buttonState(this.poster);
   }
 
-  public addToFavourite(film: IPoster): void {
-    this.cartService.addToFavourite(film);
-    if (film.id === this.poster.id) {
-      this.required = true;
+  public toggle(film: IPoster): void {
+    if (this.required) {
+      this.title = 'Unfavourite';
+      this.addToFavourite(film);
+      console.log('added');
+    } else {
+      this.title = 'Add to favourite';
+      this.removeFilm(film);
+      console.log('removed');
     }
   }
 
@@ -46,6 +50,14 @@ export class DetailPosterComponent implements OnInit {
 
   public nextMovie(): void {
     this.router.navigate(['/detail', this.nextPoster.id]);
+  }
+
+  private addToFavourite(film: IPoster): void {
+    this.cartService.addToFavourite(film);
+  }
+
+  private removeFilm(film: IPoster) {
+    this.cartService.removeFilm(film);
   }
 
   private getData(): void {
@@ -67,18 +79,5 @@ export class DetailPosterComponent implements OnInit {
         });
     });
   }
-
-  private removeFilm(film: IPoster) {
-    this.cartService.removeFilm(film);
-  }
-
-  private buttonState(film: IPoster): void {
-    if (this.required === true) {
-      this.title = 'Unfavourite'
-      this.removeFilm(film);
-    } else {
-      this.title = 'Add to favourite';
-      this.addToFavourite(film);
-    }
-  }
 }
+

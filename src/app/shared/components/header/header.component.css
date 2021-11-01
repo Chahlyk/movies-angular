@@ -31,6 +31,7 @@ body {
   display: flex;
   align-items: center;
   margin: 40px;
+  cursor: pointer;
 }
 
 .moon {
@@ -59,7 +60,6 @@ body {
 
 a, a:visited, a:active{
   text-decoration: none;
-  cursor: default;
   color: white;
 }
 

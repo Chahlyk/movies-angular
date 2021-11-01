@@ -4,7 +4,7 @@
     <div class='innerDetail'>
       <div class='detailPoster' [ngStyle]="{'background-image':  'url('+ linkForImage + poster.poster_path +')'}"></div>
       <div class='innerDetailText'>
-        <button class='addToFavourite' (click)='required = !required'>{{title}}</button>
+        <button class='addToFavourite' (click)='toggle(poster) ;required = !required'>{{title}}</button>
         <p class='innerTitle'>{{poster.title}}</p>
         <ul>
           <li class='vote'>Score: {{poster.vote_average}}</li>
@@ -18,5 +18,3 @@
     <pre class='buttonNext' (click)='nextMovie()'>Next movie          ᐅ</pre>
   </div>
 </ng-container>
-
-
