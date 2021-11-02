@@ -12,10 +12,13 @@
   background-color: #45545e;
   border-radius: 10px;
   margin: 30px;
+  cursor: pointer;
 }
 
 .picture {
   width: 500px;
   height: 500px;
   border-radius: 10px;
+  background: center;
+  background-size: cover;
 }

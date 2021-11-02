@@ -1,5 +1,6 @@
 <div class='content'>
   <p>Page Not Found</p>
   <button class='back' [routerLink]="['/']">Come back</button>
-  <img class='picture' [src]='link' alt='pic of cat'>
+  <div class='picture' [ngStyle]="{'background-image':  'url(' + link + ')'}"></div>
 </div>
+  

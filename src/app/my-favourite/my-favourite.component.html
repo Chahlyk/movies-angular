@@ -1,0 +1,11 @@
+<div class="filmList">
+  <p class="myFavourite">My favourite</p>
+  <div class="film" *ngFor="let film of films">
+    <div class="filmPoster" [ngStyle]="{'background-image':  'url('+ linkForImage + film.poster_path +')'}"></div>
+    <div>
+      <div class="unfavourite" (click)="removeFilm(film)">Unfavourite</div>
+      <p class="filmTitle">{{film.title}}</p>
+      <p class="filmOverview">{{film.overview}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+.myFavourite {
+  margin: 40px 0 0 40px;
+  color: gray;
+  font-size: larger;
+}
+
+.filmList {
+  top: 85px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+}
+
+.film {
+  padding: 40px 40px 0 40px;
+  float: left;
+  background-color: white;
+}
+
+.unfavourite {
+  float: right;
+  border: 1px solid #45545e;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 0;
+  font-size: 24px;
+  margin-top: 0;
+  color: #45545e;
+}
+
+.filmOverview {
+  padding: 15px 0;
+  margin: 40px 0 0 0;
+  color: dimgray;
+}
+
+.filmTitle {
+  font-size: 30px;
+  color: dimgray;
+  font-weight: bold;
+}
+
+.filmPoster {
+  width: 300px;
+  height: 450px;
+  background: center;
+  background-size: cover;
+  float: left;
+  margin-right: 30px;
+}
