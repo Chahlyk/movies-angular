@@ -4,7 +4,14 @@
   font-size: 40px;
 }
 
-@media only screen
+app-posters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media all
   and (max-width: 1080px)
   and (max-height: 1920px) {
   .releases {
@@ -12,30 +19,28 @@
     color: gray;
     font-size: larger;
   }
+
+  #mainContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
 }
 
-@media only screen
+@media all
 and (max-width: 400px)
 and (max-height: 900px) {
   .releases {
     margin: 120px 0 0 10px;
-    color: gray;
     font-size: 24px;
+  }
+
+  #mainContent {
+    padding: 5px;
   }
 }
 
-#mainContent {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 20px;
-}
 
-app-posters {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
 
 

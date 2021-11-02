@@ -11,15 +11,6 @@
   align-items: center;
 }
 
-@media only screen
-and (max-width: 1200px)
-and (max-height: 1080px) {
-  .poster {
-    width: 180px;
-    height: 230px;
-  }
-}
-
 .tooltip {
   position: absolute;
   width: min-content;
@@ -36,6 +27,24 @@ a, a:visited, a:active{
   text-decoration: none;
   cursor: default;
   color: black;
+}
+
+@media all
+and (max-width: 1200px)
+and (max-height: 1080px) {
+  .poster {
+    width: 180px;
+    height: 250px;
+  }
+}
+
+@media all
+and (max-width: 400px)
+and (max-height: 900px) {
+  .poster {
+    width: 150px;
+    height: 230px;
+  }
 }
 
 

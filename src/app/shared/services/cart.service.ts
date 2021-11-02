@@ -6,26 +6,25 @@ import { IPoster } from '../interfaces';
 })
 export class CartService {
   public movies: IPoster[] = [];
-  public received: IPoster[] = [];
-  public films!: string;
 
   public addToFavourite(film: IPoster): void {
-    this.movies.push(film);
-    localStorage.setItem('movies', JSON.stringify(this.movies));
+    const movies = this.getMovie();
+    const idx = movies.find(item => item.id === film.id);
+    if (!idx) {
+      movies.push( film );
+      localStorage.setItem( 'movies', JSON.stringify( movies ) );
+    }
   }
 
   public getMovie(): IPoster[] {
-    this.films = <string>localStorage.getItem('movies');
-    this.received = JSON.parse(this.films);
-    return this.received;
+    return JSON.parse(<string>localStorage.getItem('movies'));
   }
 
   public removeFilm(film: IPoster): void {
-    const idx = this.received.indexOf(film);
-    if (this.received[idx].id === film.id ) {
-      this.received.splice(idx, 1);
-      localStorage.clear();
-      localStorage.setItem('movies', JSON.stringify(this.received));
-    }
+    const movies = this.getMovie();
+    const idx = movies.findIndex(item => item.id === film.id);
+    movies.splice(idx, 1);
+    localStorage.clear();
+    localStorage.setItem('movies', JSON.stringify(movies));
   }
 }

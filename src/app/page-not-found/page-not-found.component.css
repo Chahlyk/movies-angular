@@ -22,3 +22,16 @@
   background: center;
   background-size: cover;
 }
+
+@media all
+and (max-width: 400px)
+and (max-height: 900px) {
+  .picture {
+    width: 300px;
+    height: 300px;
+  }
+
+  .back {
+    margin-top: 0;
+  }
+}

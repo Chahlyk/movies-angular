@@ -15,5 +15,6 @@ export class MyFavouriteComponent {
 
   public removeFilm(film: IPoster): void {
     this.cartService.removeFilm(film);
+    this.films = this.cartService.getMovie();
   }
 }

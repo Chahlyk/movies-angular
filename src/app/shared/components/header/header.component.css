@@ -70,3 +70,22 @@ a, a:visited, a:active{
   text-align: center;
   border-radius: 8px;
 }
+
+@media all
+and (max-width: 400px)
+and (max-height: 900px) {
+  .myAcc {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    ;
+  }
+
+  .title {
+    margin: 10px;
+  }
+
+  .dropdown {
+    right: 15px;
+  }
+}

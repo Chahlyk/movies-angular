@@ -66,6 +66,7 @@ export class DetailPosterComponent implements OnInit{
         this.posters = posters.results;
         this.idx = this.posters.findIndex(film => film.id === this.poster.id);
         this.nextPoster = this.posters[this.idx + 1];
+        this.checkButtonToggle();
       })
   }
 
@@ -78,6 +79,15 @@ export class DetailPosterComponent implements OnInit{
           this.getData();
         });
     });
+  }
+
+  private checkButtonToggle(): void {
+    const movies = this.cartService.getMovie();
+    if (movies) {
+      const currentFilm = movies.find(item => item.id === this.poster.id);
+      this.title = currentFilm ? 'Unfavourite' : 'Add to favourite';
+      this.required = !currentFilm;
+    }
   }
 }
 
