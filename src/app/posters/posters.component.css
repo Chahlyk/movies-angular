@@ -4,6 +4,13 @@
   font-size: 40px;
 }
 
+#mainContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
 app-posters {
   display: flex;
   flex-direction: row;
@@ -12,19 +19,18 @@ app-posters {
 }
 
 @media all
-  and (max-width: 1080px)
-  and (max-height: 1920px) {
+  and (max-width: 1200px)
+  and (max-height: 1080px) {
   .releases {
-    margin: 120px 0 0 50px;
+    margin: 110px 0 0 50px;
     color: gray;
-    font-size: larger;
+    font-size: 24px;
   }
 
   #mainContent {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px;
   }
 }
 
@@ -32,7 +38,7 @@ app-posters {
 and (max-width: 400px)
 and (max-height: 900px) {
   .releases {
-    margin: 120px 0 0 10px;
+    margin: 100px 0 0 10px;
     font-size: 24px;
   }
 

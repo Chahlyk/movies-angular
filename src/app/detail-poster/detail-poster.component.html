@@ -5,7 +5,7 @@
       <div class='detailPoster' [ngStyle]="{'background-image':  'url('+ linkForImage + poster.poster_path +')'}"></div>
       <div class='innerDetailText'>
         <button class='addToFavourite' (click)='toggle(poster) ;required = !required'>{{title}}</button>
-        <button class='addToFavouriteMobile' (click)='toggleMobile(poster) ;required = !required'>{{titleMobile}}</button>
+        <div class='addToFavouriteMobile' (click)='toggleMobile(poster) ;required = !required'><p>{{titleMobile}}</p></div>
         <p class='innerTitle'>{{poster.title}}</p>
         <ul class="ul">
           <li class='vote'>Score: {{poster.vote_average}}</li>
