@@ -5,6 +5,7 @@
   </div>
   <div class="dropdown" (mouseleave)="button = true">
     <div class="myAcc" (click)="button = !button">My Account ˅</div>
+    <div class="myAccMobile" [routerLink]="['/favourite']">˅</div>
     <div
       class="favourite"
       [ngStyle]="{ display: button ? 'none' : 'block'}"
