@@ -5,16 +5,33 @@
       <div class='detailPoster' [ngStyle]="{'background-image':  'url('+ linkForImage + poster.poster_path +')'}"></div>
       <div class='innerDetailText'>
         <button class='addToFavourite' (click)='toggle(poster) ;required = !required'>{{title}}</button>
+        <button class='addToFavouriteMobile' (click)='toggleMobile(poster) ;required = !required'>{{titleMobile}}</button>
         <p class='innerTitle'>{{poster.title}}</p>
-        <ul>
+        <ul class="ul">
           <li class='vote'>Score: {{poster.vote_average}}</li>
           <li class='rating'>Rating: {{poster.adult ? 'R' : 'PG'}}</li>
           <li class='releaseDate'>Release Date: {{poster.release_date | date}}</li>
+        </ul>
+        <ul class="ulMobile">
+          <li class='liMobile'>
+            <p>Score: </p>
+            <p class='data'>{{poster.vote_average}}</p>
+          </li>
+          <li class='liMobile'>
+            <p>Rating: </p>
+            <p class='data'>{{poster.adult ? 'R' : 'PG'}}</p>
+          </li>
+          <li class='liMobile'>
+            <p>Release Date: </p>
+            <p class='data'>{{poster.release_date | date}}</p>
+          </li>
         </ul>
         <p class='overview'>{{poster.overview}}</p>
       </div>
     </div>
     <pre class='buttonBack' (click)='goBack()'>ᐊ          Back to list</pre>
+    <pre class='buttonBackMobile' (click)='goBack()'>ᐊ Back</pre>
     <pre class='buttonNext' (click)='nextMovie()'>Next movie          ᐅ</pre>
+    <pre class='buttonNextMobile' (click)='nextMovie()'>Next ᐅ</pre>
   </div>
 </ng-container>
