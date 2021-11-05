@@ -58,6 +58,10 @@ body {
   border-radius: 8px;
 }
 
+.myAccMobile {
+  display: none;
+}
+
 a, a:visited, a:active{
   text-decoration: none;
   color: white;
@@ -75,10 +79,19 @@ a, a:visited, a:active{
 and (max-width: 400px)
 and (max-height: 900px) {
   .myAcc {
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    ;
+    display: none;
+  }
+
+  .myAccMobile {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: #45545e;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
   }
 
   .title {
@@ -87,5 +100,36 @@ and (max-height: 900px) {
 
   .dropdown {
     right: 15px;
+  }
+
+  .favourite {
+    display: none;
+  }
+}
+
+@media all
+and (max-width: 1300px)
+and (max-height: 1080px) {
+  * {
+    font-size: 20px;
+  }
+
+  .header {
+    height: 75px;
+  }
+
+  .moon {
+    height: 50px;
+    width: 66px;
+  }
+
+  .myAcc {
+    width: 100px;
+    font-size: 16px;
+  }
+
+  .favourite {
+    width: 100px;
+    font-size: 16px;
   }
 }
