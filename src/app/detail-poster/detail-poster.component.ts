@@ -14,6 +14,7 @@ export class DetailPosterComponent implements OnInit{
   public poster!: IPoster;
   public linkForImage: string = 'https://image.tmdb.org/t/p/w342';
   public title: string = 'Add to favourite';
+  public titleMobile: string = '☆'
   public loading: boolean = false;
   public required: boolean = true;
   private posters: IPoster[] = [];
@@ -36,11 +37,19 @@ export class DetailPosterComponent implements OnInit{
     if (this.required) {
       this.title = 'Unfavourite';
       this.addToFavourite(film);
-      console.log('added');
     } else {
       this.title = 'Add to favourite';
       this.removeFilm(film);
-      console.log('removed');
+    }
+  }
+
+  public toggleMobile(film: IPoster): void {
+    if (this.required) {
+      this.titleMobile = '★';
+      this.addToFavourite(film);
+    } else {
+      this.titleMobile = '☆';
+      this.removeFilm(film);
     }
   }
 
@@ -86,8 +95,8 @@ export class DetailPosterComponent implements OnInit{
     if (movies) {
       const currentFilm = movies.find(item => item.id === this.poster.id);
       this.title = currentFilm ? 'Unfavourite' : 'Add to favourite';
+      this.titleMobile = currentFilm ? '★' : '☆';
       this.required = !currentFilm;
     }
   }
 }
-
