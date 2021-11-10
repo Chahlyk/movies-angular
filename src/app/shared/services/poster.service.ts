@@ -10,9 +10,9 @@ export class PosterService {
 
   public constructor(private http: HttpClient) {}
 
-  public getData(): Observable<IData> {
+  public getData(page: number): Observable<IData> {
     return this.http.get<IData>('https://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c', {
-      params: new HttpParams().set('page','1')
+      params: new HttpParams().set('page', page)
     });
   }
 

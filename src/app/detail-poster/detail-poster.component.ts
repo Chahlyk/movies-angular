@@ -70,7 +70,7 @@ export class DetailPosterComponent implements OnInit{
   }
 
   private getData(): void {
-    this.posterService.getData()
+    this.posterService.getData(1)
       .subscribe(posters => {
         this.posters = posters.results;
         this.idx = this.posters.findIndex(film => film.id === this.poster.id);

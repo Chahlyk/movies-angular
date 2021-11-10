@@ -1,7 +1,11 @@
+* {
+  font-size: 40px;
+  font-family: sans-serif;
+  color: gray;
+}
+
 .releases {
   margin: 120px 0 0 50px;
-  color: gray;
-  font-size: 40px;
 }
 
 #mainContent {
@@ -18,13 +22,31 @@ app-posters {
   justify-content: space-around;
 }
 
+.pagination ul {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination ul li {
+  list-style: none;
+  border: 1px solid gray;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.pagination .green {
+  color: #00B454;
+}
+
 @media all
-  and (max-width: 1200px)
+  and (max-width: 1300px)
   and (max-height: 1080px) {
+  * {
+    font-size: 24px;
+  }
+
   .releases {
     margin: 110px 0 0 50px;
-    color: gray;
-    font-size: 24px;
   }
 
   #mainContent {
@@ -44,6 +66,14 @@ and (max-height: 900px) {
 
   #mainContent {
     padding: 5px;
+  }
+
+  .pagination .remove {
+    display: none;
+  }
+
+  .pagination ul {
+    padding: 0;
   }
 }
 
