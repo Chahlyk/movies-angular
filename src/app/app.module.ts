@@ -11,6 +11,7 @@ import { DetailPosterComponent } from './detail-poster/detail-poster.component';
 import { SharedModule } from "./shared/shared.module";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MyFavouriteComponent } from './my-favourite/my-favourite.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MyFavouriteComponent } from './my-favourite/my-favourite.component';
     HttpClientModule,
     AppRoutingModule,
     SharedModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

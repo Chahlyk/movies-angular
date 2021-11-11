@@ -75,6 +75,10 @@ and (max-height: 900px) {
   .pagination ul {
     padding: 0;
   }
+
+  .pagination ul li {
+    padding: 10px;
+  }
 }
 
 
