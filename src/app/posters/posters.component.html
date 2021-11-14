@@ -1,25 +1,15 @@
 <p class='releases'>Latest Releases</p>
 <div id='mainContent'>
-  <app-poster *ngFor='let poster of posters' [poster]='poster'></app-poster>
+  <app-poster *ngFor='let poster of posters | paginate: {
+                                                itemsPerPage: 20,
+                                                currentPage: page,
+                                                totalItems: totalItems
+                                                   }'
+              [poster]='poster'></app-poster>
 </div>
-<!--<div class="pagination">-->
-<!--  <ul>-->
-<!--    <li class="green" (click)="first()">First</li>-->
-<!--    <li (click)="prev()">Prev</li>-->
-<!--    <li class="remove" (click)="innerFirst()">{{page}}</li>-->
-<!--    <li class="remove" (click)="innerSecond()" [ngStyle]="{'display':  page === 86 ? 'none' : ''}">{{page + 1}}</li>-->
-<!--    <li class="remove" (click)="innerThird()" [ngStyle]="{'display':  page === 86 ? 'none' : ''}">{{page + 2}}</li>-->
-<!--    <li class="remove">...</li>-->
-<!--    <li (click)="next()">Next</li>-->
-<!--    <li class="green"  (click)="last()">Last</li>-->
-<!--  </ul>-->
-<!--</div>-->
-<ul>
-  <li *ngFor="let item of posters| paginate: { itemsPerPage: 20, currentPage: page, totalItems:  }">{{page}}</li>
-</ul>
-
-<pagination-controls (pageChange)="page = $event"></pagination-controls>
-
+<pagination-controls (pageChange)="page = $event"
+                     previousLabel="Prev"
+                     nextLabel="Next"></pagination-controls>
 
 
 
