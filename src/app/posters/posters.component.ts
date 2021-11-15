@@ -18,6 +18,11 @@ export class PostersComponent implements OnInit {
     this.getData(1);
   }
 
+  public pageChanged( $event: number ) {
+    this.page = $event
+    this.getData($event);
+  }
+
   private getData(page: number): void {
     this.posterService.getData(this.page)
       .subscribe((posters: IData) => {

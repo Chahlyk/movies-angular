@@ -42,6 +42,7 @@
   padding: 15px 0;
   margin: 40px 0 0 0;
   color: dimgray;
+  font-size: 24px;
 }
 
 .filmOverviewMobile {
@@ -52,6 +53,7 @@
   font-size: 30px;
   color: dimgray;
   font-weight: bold;
+  margin: 0;
 }
 
 .filmPoster {
@@ -97,7 +99,7 @@ and (max-height: 900px) {
 
   .filmTitle {
     margin: 0;
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .filmOverview {
@@ -109,6 +111,7 @@ and (max-height: 900px) {
     padding: 15px 0;
     margin: 40px 0 0 0;
     color: dimgray;
+    font-size: 15px;
   }
 }
 
@@ -122,9 +125,14 @@ and (min-width: 400px) {
   }
 
   .filmPoster {
-    width: 250px;
-    height: 340px;
+    width: 220px;
+    height: 320px;
     margin-right: 20px;
+  }
+
+  .filmOverview {
+    margin: 30px 0 0 0;
+    font-size: 22px;
   }
 }
 

@@ -8,7 +8,7 @@ import { CartService } from '../shared/services/cart.service';
   styleUrls: ['./my-favourite.component.css']
 })
 export class MyFavouriteComponent {
-  public films = this.cartService.getMovie();
+  public films: IPoster[] = this.cartService.getMovie();
   public linkForImage: string = 'https://image.tmdb.org/t/p/w342';
 
   public constructor(private cartService: CartService) { }
