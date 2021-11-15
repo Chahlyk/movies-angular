@@ -74,7 +74,15 @@ and (max-height: 900px) {
   #mainContent {
     padding: 5px;
   }
-  
+
+  .pagination .item {
+    padding: 5px;
+  }
+
+  .pagination a {
+    font-size: 16px;
+  }
+
   .pagination .num {
     display: none;
   }
