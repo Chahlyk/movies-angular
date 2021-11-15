@@ -18,7 +18,7 @@ export class PostersComponent implements OnInit {
     this.getData(1);
   }
 
-  public pageChanged( $event: number ) {
+  public pageChanged($event: number): void {
     this.page = $event
     this.getData($event);
   }

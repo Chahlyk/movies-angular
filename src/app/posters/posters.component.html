@@ -7,13 +7,11 @@
                                                    }'
               [poster]='poster'></app-poster>
 </div>
-<!--<pagination-controls (pageChange)="pageChanged($event)"-->
-<!--                     previousLabel="Prev"-->
-<!--                     nextLabel="Next"></pagination-controls>-->
+
 <pagination-template (pageChange)="pageChanged($event)"  #p="paginationApi">
   <div class="pagination">
     <div class="item green">
-      <a>First</a>
+      <a (click)="pageChanged(1)">First</a>
     </div>
     <div class="item prev"  [class.disabled]="p.isFirstPage()">
       <a (click)="p.previous()">Prev</a>
@@ -30,7 +28,7 @@
       <a (click)="p.next()">Next</a>
     </div>
     <div *ngIf="!p.isLastPage()" class="item green">
-      <a (click)="p.getLastPage()">Last</a>
+      <a (click)="pageChanged(p.getLastPage())">Last</a>
     </div>
   </div>
 </pagination-template>
