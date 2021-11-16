@@ -12,7 +12,7 @@ import { CartService } from "../shared/services/cart.service";
 })
 export class DetailPosterComponent implements OnInit{
   public poster!: IPoster;
-  public linkForImage: string = 'https://image.tmdb.org/t/p/w342';
+  public linkForImage!: string;
   public title: string = 'Add to favourite';
   public titleMobile: string = '☆'
   public loading: boolean = false;
@@ -86,6 +86,8 @@ export class DetailPosterComponent implements OnInit{
           this.poster = poster;
           this.loading = true;
           this.getData();
+          this.linkForImage = this.poster?.poster_path ? `https://image.tmdb.org/t/p/w342${this.poster.poster_path}`
+            : '../../../assets/priroda_kartinki_foto_03.jpg';
         });
     });
   }

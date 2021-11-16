@@ -1,7 +1,7 @@
 <a routerLink='/detail/{{poster.id}}'>
   <div
     class='poster'
-    [ngStyle]="{'background-image':  'url('+ linkForImage + poster.poster_path +')'}"
+    [ngStyle]="{'background-image':  'url('+ linkForImage +')'}"
     (mouseover)='tooltip = true'
     (mouseleave)='tooltip = false'
   >
