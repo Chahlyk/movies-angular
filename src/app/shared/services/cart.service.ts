@@ -17,7 +17,7 @@ export class CartService {
   }
 
   public getMovie(): IPoster[] {
-    return JSON.parse(<string>localStorage.getItem('movies'));
+    return JSON.parse(<string>localStorage.getItem('movies')) || [];
   }
 
   public removeFilm(film: IPoster): void {
